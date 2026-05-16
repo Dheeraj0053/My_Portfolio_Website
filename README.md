@@ -132,7 +132,7 @@ API Development • Database Design • Machine Learning • Data Visualization 
 
 Explore my complete portfolio and projects:
 
-**[Visit My Portfolio](https://github.com/Dheeraj0053/My_Portfolio)**
+**[Visit My Portfolio](https://dheeraj0053.github.io/My_Portfolio/index.html))**
 
 ### Pages:
 - 🏠 **Home** - Overview and key achievements
