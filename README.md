@@ -110,7 +110,7 @@ API Development • Database Design • Machine Learning • Data Visualization 
 
 ## 📚 Education
 
-**Bachelor's Degree in Computer Science** (Ongoing)
+**Bachelor's Degree in Computer Science** 
 - Sai University, Chennai
 
 **High School Certificate** (2015-2022)
@@ -121,10 +121,8 @@ API Development • Database Design • Machine Learning • Data Visualization 
 ## 🔗 Connect With Me
 
 - 📧 **Email:** dheerajkumarr005@gmail.com
-- 📱 **Phone:** 9508412053
 - 💼 **LinkedIn:** [Dheeraj Kumar Ambedkar](https://www.linkedin.com/in/dheeraj-kumar-ambedkar-8b4850266/)
 - 🐙 **GitHub:** [@Dheeraj0053](https://github.com/Dheeraj0053)
-- 📍 **Location:** Chennai, India
 
 ---
 
