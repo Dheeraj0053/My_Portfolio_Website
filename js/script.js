@@ -86,28 +86,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Active link highlighting
-    const sections = document.querySelectorAll('section');
+    // Active page highlighting based on current URL path
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const navItems = document.querySelectorAll('header nav ul li');
     
-    window.addEventListener('scroll', function() {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (pageYOffset >= (sectionTop - 100)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navItems.forEach(item => {
-            item.classList.remove('current');
-            if (item.querySelector('a').getAttribute('href').includes(current)) {
-                item.classList.add('current');
-            }
-        });
+    navItems.forEach(item => {
+        const link = item.querySelector('a');
+        const href = link.getAttribute('href');
+        item.classList.remove('current');
+        if (href === currentPath || (currentPath === '' && href === 'index.html') || (currentPath.includes('index') && href === 'index.html')) {
+            item.classList.add('current');
+        }
     });
     // Add to script.js
 // Project card animations
