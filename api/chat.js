@@ -115,8 +115,9 @@ module.exports = async function handler(req, res) {
 
     if (!geminiRes.ok) {
       console.error('Gemini API error:', data);
+      const errMsg = data.error?.message || JSON.stringify(data);
       return res.status(502).json({
-        error: 'Unable to get a response right now. Please try again or use the contact page.',
+        error: `Gemini API Error: ${errMsg}`,
       });
     }
 
