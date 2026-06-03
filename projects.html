@@ -6,6 +6,7 @@
     <title>Dheeraj Kumar Ambedkar | Projects</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chat-widget.css">
 </head>
 <body>
     <header class="professional-header">
@@ -29,20 +30,134 @@
 
     <section id="projects-hero">
         <div class="container">
-            <h1>My Projects</h1>
-            <p>Innovative solutions combining technology, sustainability, and data-driven insights</p>
+            <span class="section-label">Portfolio</span>
+            <h1 class="gradient-text">Projects</h1>
+            <p>Machine learning models, computer vision pipelines, forecasting systems, and full-stack applications — built end to end.</p>
         </div>
     </section>
 
-    <section id="featured-projects">
+    <section id="all-projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <!-- Modernized Project Cards -->
-            <div class="projects-grid enhanced-projects">
-                <!-- Project 1 -->
-                <div class="project-card enhanced">
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai-ml">AI/ML & CV</button>
+                <button class="filter-btn" data-filter="data-science">Data Science</button>
+                <button class="filter-btn" data-filter="web">Web Dev</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+
+                <!-- AI/ML & Computer Vision -->
+                <div class="project-card-item fade-in" data-category="ai-ml">
+                    <div class="project-image project-image-dl">
+                        <i class="fas fa-car project-icon"></i>
+                    </div>
+                    <div class="project-details">
+                        <h3>Car Parts Detection using YOLOv11</h3>
+                        <div class="project-meta">
+                            <span class="project-category">Object Detection</span>
+                        </div>
+                        <p class="project-description">End-to-end object detection system for automobile parts. Trained YOLOv11 on a custom dataset, optimized for accuracy and inference speed.</p>
+                        <div class="project-technologies">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">YOLOv11</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dheeraj0053/Car-Parts-Detection-Using-YOLOV11" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-item fade-in" data-category="ai-ml">
+                    <div class="project-image project-image-dl">
+                        <i class="fas fa-id-card project-icon"></i>
+                    </div>
+                    <div class="project-details">
+                        <h3>Car License Plate Detection</h3>
+                        <div class="project-meta">
+                            <span class="project-category">Computer Vision</span>
+                        </div>
+                        <p class="project-description">Detects and recognizes vehicle license plates using advanced image processing and deep learning for high accuracy.</p>
+                        <div class="project-technologies">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">OpenCV</span>
+                            <span class="tech-badge">Deep Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dheeraj0053/Car_License_Plate_Detection" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-item fade-in" data-category="ai-ml">
+                    <div class="project-image project-image-ml">
+                        <i class="fas fa-funnel-dollar project-icon"></i>
+                    </div>
+                    <div class="project-details">
+                        <h3>AI Sales & Lead Scoring System</h3>
+                        <div class="project-meta">
+                            <span class="project-category">Machine Learning</span>
+                        </div>
+                        <p class="project-description">ML pipeline for lead conversion scoring with dashboard uploads, charts, and comparison of LightGBM, XGBoost, and baseline models.</p>
+                        <div class="project-technologies">
+                            <span class="tech-badge">LightGBM</span>
+                            <span class="tech-badge">XGBoost</span>
+                            <span class="tech-badge">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dheeraj0053/AI_Sales-Lead_Scoring" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-item fade-in" data-category="ai-ml">
+                    <div class="project-image project-image-ml">
+                        <i class="fas fa-shield-alt project-icon"></i>
+                    </div>
+                    <div class="project-details">
+                        <h3>Intrusion Detection in Wireless Sensor Networks</h3>
+                        <div class="project-meta">
+                            <span class="project-category">Regression · ML</span>
+                            <span class="project-date">2023</span>
+                        </div>
+                        <p class="project-description">Predictive models to secure WSNs using Linear, Random Forest, SVM, and Gradient Boosting regression. Achieved R² score of 0.988.</p>
+                        <div class="project-technologies">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">Matplotlib</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dheeraj0053/Intrusion-Detection-in-Wireless-Sensor-Networks-Using-Regression" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-item fade-in" data-category="ai-ml">
+                    <div class="project-image project-image-dl">
+                        <i class="fas fa-brain project-icon"></i>
+                    </div>
+                    <div class="project-details">
+                        <h3>Deep Learning Image Classification with Transfer Learning</h3>
+                        <div class="project-meta">
+                            <span class="project-category">Deep Learning</span>
+                            <span class="project-date">2023</span>
+                        </div>
+                        <p class="project-description">Image classifiers using transfer learning on Xception, ResNet101V2, and InceptionResNetV2 with advanced fine-tuning on multi-class datasets.</p>
+                        <div class="project-technologies">
+                            <span class="tech-badge">TensorFlow</span>
+                            <span class="tech-badge">Keras</span>
+                            <span class="tech-badge">Transfer Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dheeraj0053/Deep-Learning-Based-Image-Classification-with-Transfer-Learning-and-Fine-Tuning" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-item fade-in" data-category="ai-ml">
                     <div class="project-image project-image-sustainability">
-                        <div class="image-placeholder"><i class="fas fa-leaf project-icon"></i></div>
+                        <i class="fas fa-leaf project-icon"></i>
                     </div>
                     <div class="project-details">
                         <h3>Low Carbon Building Solutions (Viridian)</h3>
@@ -50,364 +165,219 @@
                             <span class="project-category">AI & Sustainability</span>
                             <span class="project-date">2023</span>
                         </div>
-                        <p class="project-description">Developed AI-driven sustainable housing solutions that secured runner-up position in Accenture's "Solve the SDGs" Hackathon at IIT Madras. The project showcased net-zero, environment-friendly housing using data analytics and IoT integration.</p>
-                        <div class="project-features">
-                            <ul>
-                                <li>AI-powered analysis of building materials and energy consumption</li>
-                                <li>3-step process for achieving net zero emissions</li>
-                                <li>Data visualization dashboards for impact assessment</li>
-                                <li>Integration with IoT devices for real-time monitoring</li>
-                            </ul>
-                        </div>
+                        <p class="project-description">AI-driven sustainable housing that secured runner-up at Accenture's "Solve the SDGs" Hackathon at IIT Madras. Net-zero housing with IoT integration.</p>
                         <div class="project-technologies">
                             <span class="tech-badge">Python</span>
                             <span class="tech-badge">Machine Learning</span>
-                            <span class="tech-badge">Data Visualization</span>
-                            <span class="tech-badge">Sustainable Design</span>
+                            <span class="tech-badge">IoT</span>
                         </div>
                         <div class="project-links">
-                          <a href="https://github.com/Dheeraj0053/Viridian-sustainable-housing-solutions-" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="project-card enhanced">
-                    <div class="project-image project-image-ml">
-                        <div class="image-placeholder"><i class="fas fa-shield-alt project-icon"></i></div>
-                    </div>
-                    <div class="project-details">
-                        <h3>Intrusion Detection in Wireless Sensor Networks Using Regression</h3>
-                        <div class="project-meta">
-                            <span class="project-category">Machine Learning</span>
-                            <span class="project-date">2023</span>
-                        </div>
-                        <p class="project-description">Developed predictive models to secure Wireless Sensor Networks using various regression approaches (Linear, Random Forest, SVM, Gradient Boosting). Achieved R² score of 0.988. Includes data pipeline and model benchmarking.</p>
-                        <div class="project-features">
-                            <ul>
-                                <li>Multiple regression & ensemble models</li>
-                                <li>Comprehensive evaluation metrics</li>
-                                <li>Barrier computation for robust security</li>
-                                <li>Detailed report and GitHub code</li>
-                            </ul>
-                        </div>
-                        <div class="project-technologies">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Scikit-learn</span>
-                            <span class="tech-badge">Matplotlib</span>
-                        </div>
-                        <div class="project-links">
-                          <a href="https://github.com/Dheeraj0053/Intrusion-Detection-in-Wireless-Sensor-Networks-Using-Regression" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="project-card enhanced">
-                    <div class="project-image project-image-dl">
-                        <div class="image-placeholder"><i class="fas fa-brain project-icon"></i></div>
-                    </div>
-                    <div class="project-details">
-                        <h3>Deep Learning-Based Image Classification with Transfer Learning</h3>
-                        <div class="project-meta">
-                            <span class="project-category">Deep Learning</span>
-                            <span class="project-date">2023</span>
-                        </div>
-                        <p class="project-description">Built image classifiers using transfer learning on Xception, ResNet101V2, and InceptionResNetV2. Achieved high precision/recall on multi-class datasets with advanced fine-tuning. Includes code and live demos on request.</p>
-                        <div class="project-features">
-                            <ul>
-                                <li>TensorFlow/Keras architectures</li>
-                                <li>Transfer Learning & Fine-Tuning</li>
-                                <li>Evaluated on Airplanes, Motorbikes, and Schooners dataset</li>
-                                <li>Performance metrics & graphs</li>
-                            </ul>
-                        </div>
-                        <div class="project-technologies">
-                            <span class="tech-badge">TensorFlow</span>
-                            <span class="tech-badge">Keras</span>
-                            <span class="tech-badge">Transfer Learning</span>
-                        </div>
-                        <div class="project-links">
-                          <a href="https://github.com/Dheeraj0053/Deep-Learning-Based-Image-Classification-with-Transfer-Learning-and-Fine-Tuning" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 4 -->
-                <div class="project-card enhanced">
-                    <div class="project-image project-image-sustainability">
-                        <div class="image-placeholder"><i class="fas fa-recycle project-icon"></i></div>
-                    </div>
-                    <div class="project-details">
-                        <h3>Campus Waste Management</h3>
-                        <div class="project-meta">
-                            <span class="project-category">Sustainability</span>
-                            <span class="project-date">2023-2024</span>
-                        </div>
-                        <p class="project-description">Led a campus waste management initiative that reduced landfill waste by 20% in 6 months. Combined data analysis, infrastructure changes, and awareness campaigns to drive sustained improvement.</p>
-                        <div class="project-features">
-                            <ul>
-                                <li>Student waste analysis dashboards</li>
-                                <li>Behavioral intervention strategies</li>
-                                <li>Infrastructure for waste segregation</li>
-                                <li>Sustainability campaigns and outcomes</li>
-                            </ul>
-                        </div>
-                        <div class="project-technologies">
-                            <span class="tech-badge">Data Analysis</span>
-                            <span class="tech-badge">Excel</span>
-                            <span class="tech-badge">Power BI</span>
-                        </div>
-                        <div class="project-links">
-                          <a href="https://docs.google.com/document/d/1LOWcJSUS8VDrbqc8qeu1tJLUQWBbfxKFz0VvQYhmHPs/edit?tab=t.0" target="_blank">View Project Details <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI/ML & Computer Vision Section -->
-    <section id="ai-ml-projects" class="light-bg">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-brain"></i> AI/ML & Computer Vision</h2>
-            <div class="projects-grid">
-                <div class="medium-project-card enhanced">
-                    <div class="project-image project-image-dl">
-                        <div class="image-placeholder"><i class="fas fa-car project-icon"></i></div>
-                    </div>
-                    <div class="project-details">
-                        <h3>Car Parts Detection using YOLOv11</h3>
-                        <div class="project-meta">
-                            <span class="project-category">Object Detection, Deep Learning</span>
-                        </div>
-                        <p>End-to-end object detection system for automobile parts. Trained YOLOv11 with custom dataset, optimized for accuracy & speed.</p>
-                        <div class="project-technologies">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">YOLOv11</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Dheeraj0053/Car-Parts-Detection-Using-YOLOV11" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Dheeraj0053/Viridian-sustainable-housing-solutions-" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="medium-project-card enhanced">
-                    <div class="project-image project-image-dl">
-                        <div class="image-placeholder"><i class="fas fa-id-card project-icon"></i></div>
-                    </div>
-                    <div class="project-details">
-                        <h3>Car License Plate Detection</h3>
-                        <div class="project-meta">
-                            <span class="project-category">Computer Vision</span>
-                        </div>
-                        <p>Detects and recognizes vehicle license plates. Implements advanced image processing and ML for high accuracy.</p>
-                        <div class="project-technologies">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">OpenCV</span>
-                            <span class="tech-badge">Deep Learning</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Dheeraj0053/Car_License_Plate_Detection" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="medium-project-card enhanced">
-                    <div class="project-image project-image-ml">
-                        <div class="image-placeholder"><i class="fas fa-funnel-dollar project-icon"></i></div>
-                    </div>
-                    <div class="project-details">
-                        <h3>AI Sales & Lead Scoring System</h3>
-                        <div class="project-meta">
-                            <span class="project-category">Machine Learning, Business Intelligence</span>
-                        </div>
-                        <p>ML pipeline for lead conversion scoring. Provides dashboard uploads/charts, compares LightGBM, XGBoost, and baseline models.</p>
-                        <div class="project-technologies">
-                            <span class="tech-badge">LightGBM</span>
-                            <span class="tech-badge">XGBoost</span>
-                            <span class="tech-badge">Streamlit</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Dheeraj0053/AI_Sales-Lead_Scoring" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Data Science & Analytics Section -->
-    <section id="data-science-projects">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-chart-line"></i> Data Science & Analytics</h2>
-            <div class="projects-grid">
-                <div class="medium-project-card enhanced">
+                <!-- Data Science -->
+                <div class="project-card-item fade-in" data-category="data-science">
                     <div class="project-image project-image-ds">
-                        <div class="image-placeholder"><i class="fas fa-chart-line project-icon"></i></div>
+                        <i class="fas fa-chart-line project-icon"></i>
                     </div>
                     <div class="project-details">
                         <h3>Production-Ready Sales Forecasting System</h3>
                         <div class="project-meta">
                             <span class="project-category">Time Series</span>
                         </div>
-                        <p>Forecasting pipeline (8-week state sales): ARIMA, Prophet, XGBoost, LSTM. Includes data cleaning, feature engineering, visualizations, and open code.</p>
+                        <p class="project-description">Forecasting pipeline for 8-week state sales using ARIMA, Prophet, XGBoost, and LSTM with data cleaning, feature engineering, and visualizations.</p>
                         <div class="project-technologies">
                             <span class="tech-badge">Python</span>
                             <span class="tech-badge">ARIMA</span>
                             <span class="tech-badge">Prophet</span>
-                            <span class="tech-badge">XGBoost</span>
                             <span class="tech-badge">LSTM</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Dheeraj0053/Sales_Forecasting_System" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Dheeraj0053/Sales_Forecasting_System" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="medium-project-card enhanced">
+                <div class="project-card-item fade-in" data-category="data-science">
                     <div class="project-image project-image-ds">
-                        <div class="image-placeholder"><i class="fas fa-pen-nib project-icon"></i></div>
+                        <i class="fas fa-pen-nib project-icon"></i>
                     </div>
                     <div class="project-details">
-                        <h3>AI Blog Writer - OGcollege</h3>
+                        <h3>AI Blog Writer — OGcollege</h3>
                         <div class="project-meta">
-                            <span class="project-category">NLP, Content Generation</span>
+                            <span class="project-category">NLP · LLM</span>
                         </div>
-                        <p>FastAPI backend to generate blogs from keywords. Uses OpenAI for content, Gemini for images. DOCX/MD export included.</p>
+                        <p class="project-description">FastAPI backend generating SEO-optimized blogs from keywords using OpenAI for content and Gemini for images, with DOCX/MD export.</p>
                         <div class="project-technologies">
                             <span class="tech-badge">Python</span>
                             <span class="tech-badge">FastAPI</span>
                             <span class="tech-badge">OpenAI</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Dheeraj0053/Ai_Blog_Writer_OGcollege" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Dheeraj0053/Ai_Blog_Writer_OGcollege" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Web Development Section -->
-    <section id="web-dev-projects" class="light-bg">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-globe"></i> Web Development</h2>
-            <div class="projects-grid">
-                <div class="medium-project-card enhanced">
-                    <div class="project-image project-image-web">
-                        <div class="image-placeholder"><i class="fas fa-cloud-sun project-icon"></i></div>
+                <div class="project-card-item fade-in" data-category="data-science">
+                    <div class="project-image project-image-sustainability">
+                        <i class="fas fa-recycle project-icon"></i>
                     </div>
                     <div class="project-details">
-                        <h3>IndiCast - Weather Dashboard</h3>
+                        <h3>Campus Waste Management</h3>
                         <div class="project-meta">
-                            <span class="project-category">React, TypeScript</span>
+                            <span class="project-category">Data Analytics</span>
+                            <span class="project-date">2023–2024</span>
                         </div>
-                        <p>Weather dashboard for Indian cities with real-time data, hourly/5-day forecasts, AQI charts. React + TypeScript; glassmorphism and mobile-ready grid UI.</p>
+                        <p class="project-description">Led a campus initiative that reduced landfill waste by 20% in 6 months through data analysis, infrastructure changes, and awareness campaigns.</p>
+                        <div class="project-technologies">
+                            <span class="tech-badge">Data Analysis</span>
+                            <span class="tech-badge">Excel</span>
+                            <span class="tech-badge">Power BI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://docs.google.com/document/d/1LOWcJSUS8VDrbqc8qeu1tJLUQWBbfxKFz0VvQYhmHPs/edit?tab=t.0" target="_blank"><i class="fas fa-external-link-alt"></i> View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="project-card-item fade-in" data-category="web">
+                    <div class="project-image project-image-web">
+                        <i class="fas fa-building project-icon"></i>
+                    </div>
+                    <div class="project-details">
+                        <h3>Fanpit Space App — Smart Space Discovery & Booking</h3>
+                        <div class="project-meta">
+                            <span class="project-category">React · Firebase · Vercel</span>
+                        </div>
+                        <p class="project-description">Full-stack space booking platform to discover, book, and manage event spaces, co-working hubs, and third spaces. Firebase Auth and Firestore for secure users and real-time bookings, with smart pricing, advanced search, booking management, reviews & ratings, and a responsive UI for desktop and mobile.</p>
+                        <div class="project-technologies">
+                            <span class="tech-badge">React.js</span>
+                            <span class="tech-badge">Firebase</span>
+                            <span class="tech-badge">Firestore</span>
+                            <span class="tech-badge">Vercel</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dheeraj0053/Fanpit_Space_App" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
+                            <a href="https://fanpit-space-app-43h8.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-item fade-in" data-category="web">
+                    <div class="project-image project-image-web">
+                        <i class="fas fa-cloud-sun project-icon"></i>
+                    </div>
+                    <div class="project-details">
+                        <h3>IndiCast — Weather Dashboard</h3>
+                        <div class="project-meta">
+                            <span class="project-category">React · TypeScript</span>
+                        </div>
+                        <p class="project-description">Weather dashboard for Indian cities with real-time data, hourly/5-day forecasts, and AQI charts. Glassmorphism UI with mobile-ready grid layout.</p>
                         <div class="project-technologies">
                             <span class="tech-badge">React</span>
                             <span class="tech-badge">TypeScript</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Dheeraj0053/Indicast-Predict-the-Mausam-with-Ease-" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Dheeraj0053/Indicast-Predict-the-Mausam-with-Ease-" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="medium-project-card enhanced">
+                <div class="project-card-item fade-in" data-category="web">
                     <div class="project-image project-image-web">
-                        <div class="image-placeholder"><i class="fas fa-hands-helping project-icon"></i></div>
+                        <i class="fas fa-hands-helping project-icon"></i>
                     </div>
                     <div class="project-details">
                         <h3>Teach For India Volunteer Portal</h3>
                         <div class="project-meta">
-                            <span class="project-category">React, Firebase</span>
+                            <span class="project-category">React · Firebase</span>
                         </div>
-                        <p>Volunteer registration app for Teach For India. Admin dashboard, autosave, CSV export, dark mode, and notifications. Clean, accessible UI/UX.</p>
+                        <p class="project-description">Volunteer registration app with admin dashboard, autosave, CSV export, dark mode, and notifications. Clean, accessible UI/UX.</p>
                         <div class="project-technologies">
                             <span class="tech-badge">React</span>
                             <span class="tech-badge">Firebase</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Dheeraj0053/teach-for-india-volunteer-portal" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Dheeraj0053/teach-for-india-volunteer-portal" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="medium-project-card enhanced">
+                <div class="project-card-item fade-in" data-category="web">
                     <div class="project-image project-image-web">
-                        <div class="image-placeholder"><i class="fas fa-spider project-icon"></i></div>
+                        <i class="fas fa-spider project-icon"></i>
                     </div>
                     <div class="project-details">
-                        <h3>InsightScraper - Web Scraping Application</h3>
+                        <h3>InsightScraper — Web Scraping App</h3>
                         <div class="project-meta">
-                            <span class="project-category">Node.js, Puppeteer</span>
+                            <span class="project-category">Node.js · Puppeteer</span>
                         </div>
-                        <p>Web scraper with keyword search, Puppeteer-based content extraction and Google fallback. Easy to use and open source.</p>
+                        <p class="project-description">Web scraper with keyword search, Puppeteer-based content extraction, and Google fallback for robust data collection.</p>
                         <div class="project-technologies">
                             <span class="tech-badge">Node.js</span>
                             <span class="tech-badge">Puppeteer</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Dheeraj0053/Web_Scraper_Application" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Dheeraj0053/Web_Scraper_Application" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="medium-project-card enhanced">
+                <div class="project-card-item fade-in" data-category="web">
                     <div class="project-image project-image-web">
-                        <div class="image-placeholder"><i class="fas fa-calendar-alt project-icon"></i></div>
+                        <i class="fas fa-calendar-alt project-icon"></i>
                     </div>
                     <div class="project-details">
                         <h3>Saral Events Admin Dashboard</h3>
                         <div class="project-meta">
-                            <span class="project-category">TypeScript, Firebase</span>
+                            <span class="project-category">TypeScript · Firebase</span>
                         </div>
-                        <p>Admin dashboard for event platform ops: event listings, bookings, user data. Built with TypeScript + Firebase, full-stack practice & UI/UX best practice.</p>
+                        <p class="project-description">Admin dashboard for event platform operations — event listings, bookings, and user management built during my internship at Saral Events.</p>
                         <div class="project-technologies">
                             <span class="tech-badge">TypeScript</span>
                             <span class="tech-badge">Firebase</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Dheeraj0053/Admin_Dashboard_saral_events" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Dheeraj0053/Admin_Dashboard_saral_events" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Business Automation & CRM Section -->
-    <section id="automation-projects">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-cogs"></i> Business Automation & CRM</h2>
-            <div class="projects-grid">
-                <div class="medium-project-card enhanced">
+                <!-- Automation -->
+                <div class="project-card-item fade-in" data-category="automation">
                     <div class="project-image project-image-automation">
-                        <div class="image-placeholder"><i class="fas fa-robot project-icon"></i></div>
+                        <i class="fas fa-robot project-icon"></i>
                     </div>
                     <div class="project-details">
                         <h3>HR Operations Automation System</h3>
                         <div class="project-meta">
-                            <span class="project-category">VBA, PowerShell</span>
+                            <span class="project-category">VBA · PowerShell</span>
                         </div>
-                        <p>Automated HR dashboard pipeline—VBA and PowerShell for Excel analytics, charting, and interactive filtering. Fast, robust, and business-ready.</p>
+                        <p class="project-description">Automated HR dashboard pipeline using VBA and PowerShell for Excel analytics, charting, and interactive filtering.</p>
                         <div class="project-technologies">
                             <span class="tech-badge">VBA</span>
                             <span class="tech-badge">PowerShell</span>
                             <span class="tech-badge">Excel</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Dheeraj0053/HR_Operations_Automation_Project" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Dheeraj0053/HR_Operations_Automation_Project" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <section id="project-cta">
         <div class="container">
-            <h2>Have a project in mind?</h2>
-            <p>I'm always interested in collaborating on innovative projects that combine technology, data science, and real-world impact.</p>
-            <a href="contact.html" class="btn-primary">Let's Connect</a>
+            <h2>Interested in collaborating?</h2>
+            <p>I'm always open to AI/ML projects, research collaborations, and internship opportunities.</p>
+            <a href="contact.html" class="btn-primary">Let's Connect <i class="fas fa-paper-plane"></i></a>
         </div>
     </section>
 
@@ -416,7 +386,7 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <h3>Dheeraj Kumar Ambedkar</h3>
-                    <p>Computer Science Student | Tech Innovator | Sustainability Advocate</p>
+                    <p>Aspiring AI/ML Engineer · Computer Science @ Sai University · Building intelligent systems that solve real-world problems.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
@@ -432,17 +402,18 @@
                     <ul>
                         <li><i class="fas fa-envelope"></i> dheerajkumarr005@gmail.com</li>
                         <li><i class="fas fa-phone"></i> 9508412053</li>
-                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/dheeraj-kumar-ambedkar-8b4850266/" target="_blank">LinkedIn Profile</a></li>
+                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/dheeraj-kumar-ambedkar-8b4850266/" target="_blank">LinkedIn</a></li>
                         <li><i class="fab fa-github"></i> <a href="https://github.com/Dheeraj0053" target="_blank">GitHub</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-copyright">
-                <p>&copy; 2024 Dheeraj Kumar Ambedkar. All rights reserved.</p>
+                <p>&copy; 2025 Dheeraj Kumar Ambedkar. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/chat-widget.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

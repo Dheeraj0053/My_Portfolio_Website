@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dheeraj Kumar Ambedkar | Portfolio</title>
+    <title>Dheeraj Kumar Ambedkar | AI/ML Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chat-widget.css">
 </head>
 <body>
 <header class="professional-header">
@@ -26,68 +27,203 @@
         </div>
     </div>
 </header>
+
 <main>
-    <section id="hero" class="card" style="margin-top: 64px;">
-        <div class="container hero-section-flex" style="display:flex;flex-wrap:wrap;align-items:center;gap:48px;">
-            <div class="hero-content" style="flex:1;min-width:280px;">
-                <h1 class="section-title" style="margin-bottom: 0.7em;">Dheeraj Kumar Ambedkar</h1>
-                <h2 style="color:#194569;">Computer Science Student & Tech Innovator</h2>
-                <p class="hero-summary" style="font-size:1.17rem;margin-bottom:2em;">Dynamic and detail-oriented undergraduate with expertise in CRM tools, data analysis, and sustainable tech solutions.</p>
+    <section id="hero">
+        <div class="container hero-section-flex">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    Open to AI/ML Jobs & Collaborations
+                </div>
+                <h1 class="gradient-text">Dheeraj Kumar Ambedkar</h1>
+                <p class="hero-role" id="typing-text">Aspiring AI/ML Engineer</p>
+                <p class="hero-summary">AI/ML and Software Development enthusiast with experience building machine learning systems, full-stack applications, automation workflows, and business intelligence solutions. Skilled in Python, React, FastAPI, SQL, and modern AI technologies, with a passion for solving real-world problems through data-driven and scalable solutions.</p>
                 <div class="hero-cta">
-                    <a href="about.html" class="btn-primary btn-glow" style="margin-right:14px;"><span>View My Profile</span> <i class="fas fa-chevron-right"></i></a>
-                    <a href="projects.html" class="btn-secondary btn-pulse"><span>See Projects</span> <i class="fas fa-laptop-code"></i></a>
+                    <a href="projects.html" class="btn-primary btn-glow"><span>View Projects</span> <i class="fas fa-code-branch"></i></a>
+                    <a href="about.html" class="btn-secondary"><span>About Me</span> <i class="fas fa-user"></i></a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="stat-number" data-count="15">0</div>
+                        <div class="stat-label">Projects Built</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number" data-count="3">0</div>
+                        <div class="stat-label">Internships</div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image card" style="flex:1;min-width:200px;max-width:372px;padding:0;border-radius:22px;overflow:hidden;background:#f7f7fa;box-shadow:0 3px 18px rgba(38,145,217,0.13);">
-                <img src="assets/image.jpg" alt="Dheeraj Kumar Ambedkar" class="profile-image" style="width:100%;object-fit:cover;height:318px;border-radius:16px;">
+            <div class="hero-image">
+                <div class="hero-image-glow"></div>
+                <div class="hero-image-frame">
+                    <img src="assets/image.jpg" alt="Dheeraj Kumar Ambedkar">
+                </div>
             </div>
         </div>
     </section>
+
+    <section class="tech-stack-section">
+        <div class="tech-stack-label">Tech Stack</div>
+        <div class="tech-marquee">
+            <div class="tech-marquee-track">
+                <span class="tech-pill"><i class="fab fa-python"></i> Python</span>
+                <span class="tech-pill"><i class="fas fa-brain"></i> TensorFlow</span>
+                <span class="tech-pill"><i class="fas fa-robot"></i> Scikit-learn</span>
+                <span class="tech-pill"><i class="fas fa-eye"></i> YOLOv11</span>
+                <span class="tech-pill"><i class="fas fa-chart-line"></i> XGBoost</span>
+                <span class="tech-pill"><i class="fas fa-bolt"></i> PyTorch</span>
+                <span class="tech-pill"><i class="fas fa-server"></i> FastAPI</span>
+                <span class="tech-pill"><i class="fab fa-react"></i> React.js</span>
+                <span class="tech-pill"><i class="fas fa-database"></i> SQL</span>
+                <span class="tech-pill"><i class="fas fa-wind"></i> Streamlit</span>
+                <span class="tech-pill"><i class="fas fa-microchip"></i> OpenCV</span>
+                <span class="tech-pill"><i class="fas fa-cloud"></i> OpenAI API</span>
+                <span class="tech-pill"><i class="fab fa-python"></i> Python</span>
+                <span class="tech-pill"><i class="fas fa-brain"></i> TensorFlow</span>
+                <span class="tech-pill"><i class="fas fa-robot"></i> Scikit-learn</span>
+                <span class="tech-pill"><i class="fas fa-eye"></i> YOLOv11</span>
+                <span class="tech-pill"><i class="fas fa-chart-line"></i> XGBoost</span>
+                <span class="tech-pill"><i class="fas fa-bolt"></i> PyTorch</span>
+                <span class="tech-pill"><i class="fas fa-server"></i> FastAPI</span>
+                <span class="tech-pill"><i class="fab fa-react"></i> React.js</span>
+                <span class="tech-pill"><i class="fas fa-database"></i> SQL</span>
+                <span class="tech-pill"><i class="fas fa-wind"></i> Streamlit</span>
+                <span class="tech-pill"><i class="fas fa-microchip"></i> OpenCV</span>
+                <span class="tech-pill"><i class="fas fa-cloud"></i> OpenAI API</span>
+            </div>
+        </div>
+    </section>
+
     <section id="expertise">
         <div class="container">
+            <span class="section-label">What I Do</span>
             <h2 class="section-title">Core Expertise</h2>
+            <p class="section-subtitle">Focused on the full ML lifecycle — from data pipelines and model training to deployment and monitoring.</p>
             <div class="expertise-grid">
-                <div class="expertise-card card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Data Analysis</h3>
-                    <p>Excel, Power BI, Python (Pandas, NumPy, Matplotlib)</p>
-                </div>
-                <div class="expertise-card card">
-                    <i class="fas fa-code"></i>
-                    <h3>Web Development</h3>
-                    <p>JavaScript, HTML, CSS, React.js, Python</p>
-                </div>
-                <div class="expertise-card card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>CRM Solutions</h3>
-                    <p>Zoho CRM, Analytics, Campaigns, SalesIQ</p>
-                </div>
-                <div class="expertise-card card">
+                <div class="expertise-card card fade-in">
                     <i class="fas fa-brain"></i>
-                    <h3>AI Solutions</h3>
-                    <p>AI-powered analysis for sustainable solutions</p>
+                    <h3>Machine Learning</h3>
+                    <p>Regression, ensemble methods, gradient boosting, and model evaluation with scikit-learn, XGBoost, and LightGBM.</p>
+                    <div class="expertise-tags">
+                        <span>scikit-learn</span><span>XGBoost</span><span>LightGBM</span>
+                    </div>
+                </div>
+                <div class="expertise-card card fade-in">
+                    <i class="fas fa-eye"></i>
+                    <h3>Computer Vision</h3>
+                    <p>Object detection with YOLOv11, transfer learning with TensorFlow/Keras, and image classification pipelines.</p>
+                    <div class="expertise-tags">
+                        <span>YOLOv11</span><span>TensorFlow</span><span>OpenCV</span>
+                    </div>
+                </div>
+                <div class="expertise-card card fade-in">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Science</h3>
+                    <p>Time series forecasting with ARIMA, Prophet, LSTM, feature engineering, and interactive dashboards.</p>
+                    <div class="expertise-tags">
+                        <span>Prophet</span><span>LSTM</span><span>Pandas</span>
+                    </div>
+                </div>
+                <div class="expertise-card card fade-in">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Automation</h3>
+                    <p>LLM-powered content generation, lead scoring systems, and FastAPI backends for production AI workflows.</p>
+                    <div class="expertise-tags">
+                        <span>FastAPI</span><span>OpenAI</span><span>Streamlit</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="achievements" class="dark-bg card" style="margin-top:34px;">
+
+    <section id="featured-preview">
         <div class="container">
+            <span class="section-label">Selected Work</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A snapshot of my AI/ML work. See the full portfolio for all projects.</p>
+            <div class="featured-preview-grid">
+                <div class="preview-card fade-in">
+                    <div class="preview-card-header dl"></div>
+                    <div class="preview-card-body">
+                        <h3>Car Parts Detection with YOLOv11</h3>
+                        <p>End-to-end object detection system trained on a custom automobile parts dataset, optimized for accuracy and inference speed.</p>
+                        <div class="project-technologies">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">YOLOv11</span>
+                        </div>
+                        <div class="preview-card-footer">
+                            <a href="https://github.com/Dheeraj0053/Car-Parts-Detection-Using-YOLOV11" target="_blank" class="preview-link">GitHub <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-card fade-in">
+                    <div class="preview-card-header ml"></div>
+                    <div class="preview-card-body">
+                        <h3>AI Sales & Lead Scoring System</h3>
+                        <p>ML pipeline comparing LightGBM, XGBoost, and baseline models with an interactive Streamlit dashboard for lead conversion scoring.</p>
+                        <div class="project-technologies">
+                            <span class="tech-badge">LightGBM</span>
+                            <span class="tech-badge">Streamlit</span>
+                        </div>
+                        <div class="preview-card-footer">
+                            <a href="https://github.com/Dheeraj0053/AI_Sales-Lead_Scoring" target="_blank" class="preview-link">GitHub <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-card fade-in">
+                    <div class="preview-card-header ds"></div>
+                    <div class="preview-card-body">
+                        <h3>Sales Forecasting System</h3>
+                        <p>Production-ready forecasting pipeline using ARIMA, Prophet, XGBoost, and LSTM with full data cleaning and visualization.</p>
+                        <div class="project-technologies">
+                            <span class="tech-badge">Prophet</span>
+                            <span class="tech-badge">LSTM</span>
+                        </div>
+                        <div class="preview-card-footer">
+                            <a href="https://github.com/Dheeraj0053/Sales_Forecasting_System" target="_blank" class="preview-link">GitHub <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:36px;">
+                <a href="projects.html" class="btn-secondary">View All Projects <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="container">
+            <span class="section-label">Highlights</span>
             <h2 class="section-title">Key Achievements</h2>
             <div class="achievements-grid">
-                <div class="achievement-item card"><div class="achievement-number">10-15%</div><div class="achievement-text">Boost in social media engagement through data-driven strategies</div></div>
-                <div class="achievement-item card"><div class="achievement-number">20%</div><div class="achievement-text">Reduction in campus landfill waste in 6 months</div></div>
-                <div class="achievement-item card"><div class="achievement-number">Runner-Up</div><div class="achievement-text">Accenture's "Solve the SDGs" Hackathon</div></div>
-                <div class="achievement-item card"><div class="achievement-number">Global</div><div class="achievement-text">UN Millennium Fellowship recipient</div></div>
+                <div class="achievement-item fade-in">
+                    <div class="achievement-number">R² 0.988</div>
+                    <div class="achievement-text">Best regression model score on WSN intrusion detection dataset</div>
+                </div>
+                <div class="achievement-item fade-in">
+                    <div class="achievement-number">15+</div>
+                    <div class="achievement-text">AI/ML, data science, and full-stack projects on GitHub</div>
+                </div>
+                <div class="achievement-item fade-in">
+                    <div class="achievement-number">Runner-Up</div>
+                    <div class="achievement-text">Accenture/IITM Hackathon — "Solve the SDGs"</div>
+                </div>
+                <div class="achievement-item fade-in">
+                    <div class="achievement-number">Global</div>
+                    <div class="achievement-text">UN Millennium Fellowship recipient (2023–24)</div>
+                </div>
             </div>
         </div>
     </section>
 </main>
+
 <footer class="professional-footer">
     <div class="container">
         <div class="footer-content">
             <div class="footer-about">
                 <h3>Dheeraj Kumar Ambedkar</h3>
-                <p>Computer Science Student | Tech Innovator | Sustainability Advocate</p>
+                <p>Aspiring AI/ML Engineer · Computer Science @ Sai University · Building intelligent systems that solve real-world problems.</p>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
@@ -103,16 +239,17 @@
                 <ul>
                     <li><i class="fas fa-envelope"></i> dheerajkumarr005@gmail.com</li>
                     <li><i class="fas fa-phone"></i> 9508412053</li>
-                    <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/dheeraj-kumar-ambedkar-8b4850266/" target="_blank">LinkedIn Profile</a></li>
+                    <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/dheeraj-kumar-ambedkar-8b4850266/" target="_blank">LinkedIn</a></li>
                     <li><i class="fab fa-github"></i> <a href="https://github.com/Dheeraj0053" target="_blank">GitHub</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-copyright">
-            <p>&copy; 2024 Dheeraj Kumar Ambedkar. All rights reserved.</p>
+            <p>&copy; 2025 Dheeraj Kumar Ambedkar. All rights reserved.</p>
         </div>
     </div>
 </footer>
-<script src="js/script.js"></script>
+<script src="js/chat-widget.js" defer></script>
+<script src="js/script.js" defer></script>
 </body>
 </html>

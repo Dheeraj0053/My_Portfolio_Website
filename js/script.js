@@ -2,80 +2,173 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('header nav');
-    
+
     if (mobileMenuToggle && nav) {
         mobileMenuToggle.addEventListener('click', function() {
             nav.classList.toggle('active');
-            this.querySelector('i').classList.toggle('fa-bars');
-            this.querySelector('i').classList.toggle('fa-times');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         });
     }
 
-    // Close mobile menu when clicking on a link
     const navLinks = document.querySelectorAll('header nav ul li a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 768 && nav) {
                 nav.classList.remove('active');
-                mobileMenuToggle.querySelector('i').classList.add('fa-bars');
-                mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
             }
         });
     });
 
-    // Animate skill bars on about page
+    // Typing effect for hero role
+    const typingEl = document.getElementById('typing-text');
+    if (typingEl) {
+        const roles = [
+            'Aspiring AI/ML Engineer',
+            'Computer Vision Enthusiast',
+            'Machine Learning Builder',
+            'Data Science Enthusiast',
+            'Web Developer',
+            'Full Stack Developer',
+            'Content Strategy & AI Automation Specialist',
+            'Zoho CRM & Automation Specialist',
+        ];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeRole() {
+            const current = roles[roleIndex];
+            if (isDeleting) {
+                typingEl.textContent = current.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingEl.textContent = current.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let speed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === current.length) {
+                speed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                speed = 400;
+            }
+
+            setTimeout(typeRole, speed);
+        }
+
+        typeRole();
+    }
+
+    // Counter animation for hero stats
+    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+    if (statNumbers.length > 0) {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-count'), 10);
+                    let current = 0;
+                    const increment = Math.ceil(target / 30);
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            el.textContent = target + '+';
+                            clearInterval(timer);
+                        } else {
+                            el.textContent = current;
+                        }
+                    }, 40);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(el => counterObserver.observe(el));
+    }
+
+    // Skill bar animation
     const skillBars = document.querySelectorAll('.skill-level');
-    
     if (skillBars.length > 0) {
-        // Trigger animation when element is in viewport
-        const observer = new IntersectionObserver((entries) => {
+        const skillObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     skillBars.forEach(bar => {
-                        const level = bar.getAttribute('data-level');
-                        bar.style.width = level;
+                        bar.style.width = bar.getAttribute('data-level');
                     });
-                    observer.unobserve(entry.target);
+                    skillObserver.disconnect();
                 }
             });
-        }, {threshold: 0.5});
+        }, { threshold: 0.3 });
 
-        document.querySelectorAll('.skill-bar').forEach(bar => {
-            observer.observe(bar);
+        const firstSkillBar = document.querySelector('.skill-bar');
+        if (firstSkillBar) skillObserver.observe(firstSkillBar);
+    }
+
+    // Fade-in on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+    if (fadeElements.length > 0) {
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        fadeElements.forEach((el, i) => {
+            el.style.transitionDelay = `${(i % 4) * 0.1}s`;
+            fadeObserver.observe(el);
         });
     }
 
-    // Contact form submission
+    // Project filter buttons
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.getAttribute('data-filter');
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    // Contact form — allow FormSubmit to handle submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send this data to a server
-            console.log('Form submitted:', {name, email, subject, message});
-            
-            // Show success message
-            alert(`Thank you, ${name}! Your message has been sent successfully. I'll get back to you soon.`);
-            
-            // Reset form
-            this.reset();
+        contactForm.addEventListener('submit', function() {
+            const btn = this.querySelector('.btn-submit');
+            if (btn) {
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+            }
         });
     }
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+            e.preventDefault();
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
@@ -86,51 +179,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Active page highlighting based on current URL path
+    // Active page highlighting
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const navItems = document.querySelectorAll('header nav ul li');
-    
+
     navItems.forEach(item => {
         const link = item.querySelector('a');
         const href = link.getAttribute('href');
         item.classList.remove('current');
-        if (href === currentPath || (currentPath === '' && href === 'index.html') || (currentPath.includes('index') && href === 'index.html')) {
+        if (href === currentPath || (currentPath === '' && href === 'index.html')) {
             item.classList.add('current');
         }
     });
-    // Add to script.js
-// Project card animations
-const projectCards = document.querySelectorAll('.project-card');
-
-const projectObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, {threshold: 0.1});
-
-projectCards.forEach((card, index) => {
-    card.style.opacity = 0;
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-    projectObserver.observe(card);
-});
-
-    // Form validation for newsletter
-    const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            
-            if (email && email.includes('@') && email.includes('.')) {
-                alert(`Thank you for subscribing with ${email}!`);
-                this.reset();
-            } else {
-                alert('Please enter a valid email address.');
-            }
-        });
-    }
 });
