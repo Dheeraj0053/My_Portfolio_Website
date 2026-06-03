@@ -54,7 +54,7 @@
             <i class="fas fa-paper-plane"></i>
           </button>
         </form>
-        <p class="chat-footer-note">Powered by Gemini · <a href="contact.html">Contact Dheeraj</a> for direct outreach</p>
+        <p class="chat-footer-note">Powered by Groq · <a href="contact.html">Contact Dheeraj</a> for direct outreach</p>
       </div>
       <button type="button" class="chat-fab" id="chatFab" aria-label="Open portfolio chat" aria-expanded="false">
         <i class="fas fa-comments" id="chatFabIcon"></i>
