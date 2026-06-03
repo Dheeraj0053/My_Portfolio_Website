@@ -1,6 +1,6 @@
 const { SYSTEM_INSTRUCTION } = require('./portfolio-context');
 
-const GEMINI_MODEL = 'gemini-2.0-flash';
+const GROQ_MODEL = 'llama-3.1-8b-instant';
 const MAX_MESSAGE_LENGTH = 500;
 const MAX_HISTORY_TURNS = 8;
 
@@ -34,13 +34,13 @@ function sanitizeHistory(history) {
     .filter(
       (item) =>
         item &&
-        (item.role === 'user' || item.role === 'model') &&
+        (item.role === 'user' || item.role === 'model' || item.role === 'assistant') &&
         typeof item.text === 'string' &&
         item.text.trim().length > 0
     )
     .map((item) => ({
-      role: item.role,
-      parts: [{ text: item.text.trim().slice(0, MAX_MESSAGE_LENGTH) }],
+      role: item.role === 'model' ? 'assistant' : item.role,
+      content: item.text.trim().slice(0, MAX_MESSAGE_LENGTH),
     }));
 }
 
@@ -58,10 +58,10 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
     return res.status(503).json({
-      error: 'Chat is not configured yet. Please set GEMINI_API_KEY on the server.',
+      error: 'Chat is not configured yet. Please set GROQ_API_KEY on the server.',
     });
   }
 
@@ -81,48 +81,42 @@ module.exports = async function handler(req, res) {
   }
 
   const history = sanitizeHistory(body.history);
-  const contents = [
+  const messages = [
+    { role: 'system', content: SYSTEM_INSTRUCTION },
     ...history,
-    { role: 'user', parts: [{ text: message }] },
+    { role: 'user', content: message },
   ];
 
-  const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
+  const groqUrl = 'https://api.groq.com/openai/v1/chat/completions';
 
   try {
-    const geminiRes = await fetch(geminiUrl, {
+    const groqRes = await fetch(groqUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
       body: JSON.stringify({
-        systemInstruction: {
-          parts: [{ text: SYSTEM_INSTRUCTION }],
-        },
-        contents,
-        generationConfig: {
-          temperature: 0.35,
-          maxOutputTokens: 600,
-          topP: 0.9,
-        },
-        safetySettings: [
-          { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-          { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-          { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-          { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-        ],
+        model: GROQ_MODEL,
+        messages,
+        temperature: 0.35,
+        max_tokens: 600,
+        top_p: 0.9,
       }),
     });
 
-    const data = await geminiRes.json();
+    const data = await groqRes.json();
 
-    if (!geminiRes.ok) {
-      console.error('Gemini API error:', data);
+    if (!groqRes.ok) {
+      console.error('Groq API error:', data);
       const errMsg = data.error?.message || JSON.stringify(data);
       return res.status(502).json({
-        error: `Gemini API Error: ${errMsg}`,
+        error: `Groq API Error: ${errMsg}`,
       });
     }
 
     const reply =
-      data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ||
+      data.choices?.[0]?.message?.content?.trim() ||
       "I couldn't generate a response. Please email dheerajkumarr005@gmail.com.";
 
     return res.status(200).json({ reply });
